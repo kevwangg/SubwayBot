@@ -1,0 +1,4 @@
+This is a Discord bot designed to create a Subway sandwich order. 
+Once it is added to your server, use $help to receive a list of commands and what each one does.
+Currently, this is still a work in progress, so the bot is only able to create a Subway sandwich.
+Working on: Being able to favourite a sandwich, using $favlist to display a list of favourited sandwiches, and removing sandwiches from the favourite list
