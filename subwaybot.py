@@ -22,6 +22,7 @@ favouriteSandwiches = []
 
 client = discord.Client()
 
+#Allowing the bot to run on Discord
 @client.event
 async def on_ready():
     print('We have logged in as {0.user}'.format(client))
@@ -31,17 +32,18 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('$subway'):
+    if message.content.startswith('$subway'): #prefix for creating a sandwich
       sandwichList = [sandwich, bread, cheese, veggies, sauce]
+      #sends the message
       await message.channel.send(f' Sandwich: {sandwichList[0]}\nBread: {sandwichList[1]}\nCheese: {sandwichList[2]}\nVeggies: {sandwichList[3]}\nSauce: {sandwichList[4]}')
       previousSandwich = sandwichList
 
     
-    if message.content.startswith('$fav'):
+    if message.content.startswith('$fav'): #prefix for adding a sandwich to favourites
       favouriteSandwiches.append(previousSandwich)
     
 
-    if message.content.startswith('$favlist'):
+    if message.content.startswith('$favlist'): #prints out each sandwich in favourites
       for oldSandwich in favouriteSandwiches:
         await message.channel.send(oldSandwich)
     
